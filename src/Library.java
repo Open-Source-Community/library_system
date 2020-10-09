@@ -9,6 +9,10 @@ public class Library {
     public void addBook(String book){
         if(count >= size){
             // expand size
+            size += 10;
+            String tmp = new String[size];
+            System.arraycopy(shelfes, 0, tmp, 0, shelfes.size());
+            shelfes = tmp;
         }
         shelfes[count++] = book;
     }
